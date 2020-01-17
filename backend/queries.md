@@ -10,6 +10,12 @@ mutation {
   }
 }
 
+mutation createDog{
+  createDog(name: "Boo boo") {
+    name
+  }
+}
+
 # Query
 query {
     users(where: {
@@ -18,4 +24,10 @@ query {
         id
         name
     }
+}
+
+query getAllDogs{
+  dogs {
+    name
+  }
 }
