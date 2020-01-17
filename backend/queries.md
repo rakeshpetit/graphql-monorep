@@ -31,3 +31,17 @@ query getAllDogs{
     name
   }
 }
+
+# Items
+query getAllItems{
+  items {
+    title
+  }
+}
+
+mutation createItem{
+  createItem(title: "Title", description: "Desc", price: 10, image: "image", largeImage: "LargeImage") {
+    id
+    title
+  }
+}
