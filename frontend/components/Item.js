@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import Title from './styles/Title'
+import DeleteItem from './DeleteItem'
 import ItemStyles from './styles/ItemStyles'
 import PriceTag from './styles/PriceTag'
 import formatMoney from '../lib/formatMoney'
@@ -26,7 +27,7 @@ const Item = ({ item }) => {
                     <a>Edit</a>
                 </Link>
                 <button>Add to Card</button>
-                <button>Delete</button>
+                <DeleteItem id={item.id}>Delete this item</DeleteItem>
             </div>
         </ItemStyles>
     )

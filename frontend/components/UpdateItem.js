@@ -69,10 +69,9 @@ export default class UpdateItem extends Component {
             }
         });
         console.log(res)
-        // Router.push({
-        //     pathname: '/item',
-        //     query: { id: res.data.createItem.id }
-        // })
+        Router.push({
+            pathname: '/items'
+        })
     }
 
     render() {
