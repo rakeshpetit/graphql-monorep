@@ -15,6 +15,7 @@ const Item = ({ item }) => {
                     <a>{item.title}</a>
                 </Link>
             </Title>
+            <img height={100} src={item.image} />
             <PriceTag>{formatMoney(item.price)}</PriceTag>
             <p>{item.description}</p>
             <div className="buttonList">
