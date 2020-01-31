@@ -18,7 +18,7 @@ export class MyApp extends App {
       <Container>
         <ApolloProvider client={apollo}>
           <Page>
-            <Component />
+            <Component {...pageProps} />
           </Page>
         </ApolloProvider>
       </Container>

@@ -33,6 +33,12 @@ query getAllDogs{
 }
 
 # Items
+query getItem{
+  item(where:{ id: "ck5igdls0fd3q0961cmuldltv"}) {
+    title
+  }
+}
+
 query getAllItems{
   items {
     title
