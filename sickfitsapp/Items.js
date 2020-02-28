@@ -11,7 +11,6 @@ const Items = ({data}) => {
           flex: 0,
           alignItems: 'center',
         }}>
-        <Text>Items</Text>
         {data.items.length > 0 &&
           data.items.map(item => <Item key={item.id} item={item} />)}
       </ScrollView>
