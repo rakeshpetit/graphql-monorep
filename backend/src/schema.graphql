@@ -13,8 +13,9 @@ type UserItem {
 }
 
 type Query {
-  items: [Item]!
+  items(where: ItemWhereInput, orderBy: ItemOrderByInput, skip: Int, first: Int): [Item]!
   item(where: ItemWhereUniqueInput!): Item
+  itemsConnection(where: ItemWhereInput): ItemConnection!
   users: [User]!
   user(where: UserWhereUniqueInput!): User
   queryUser(id: ID!): UserItem
