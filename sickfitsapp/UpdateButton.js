@@ -5,22 +5,35 @@ import gql from 'graphql-tag';
 import {ALL_ITEMS_QUERY} from './Home';
 import {HomeStackContext} from './HomeStack';
 
-const DELETE_ITEM_MUTATION = gql`
-  mutation DELETE_ITEM_MUTATION($id: ID!) {
-    deleteItem(id: $id) {
+const UPDATE_ITEM_MUTATION = gql`
+  mutation UPDATE_ITEM_MUTATION(
+    $id: ID!
+    $title: String
+    $description: String
+    $price: Int
+  ) {
+    updateItem(
+      id: $id
+      title: $title
+      description: $description
+      price: $price
+    ) {
       id
+      title
+      description
+      price
     }
   }
 `;
 
-const DeleteButton = ({deleteItemId}) => {
+const UpdateButton = ({deleteItemId}) => {
   const {navigation} = useContext(HomeStackContext);
   const update = (cache, {data: {item}}) => {
     navigation.navigate('Home');
   };
   return (
     <Mutation
-      mutation={DELETE_ITEM_MUTATION}
+      mutation={UPDATE_ITEM_MUTATION}
       variables={{id: deleteItemId}}
       update={update}
       refetchQueries={() => {
@@ -33,7 +46,7 @@ const DeleteButton = ({deleteItemId}) => {
       }}>
       {(deleteItem, {error}) => (
         <Button
-          title="Delete"
+          title="Update"
           onPress={() => {
             deleteItem();
           }}
@@ -43,4 +56,4 @@ const DeleteButton = ({deleteItemId}) => {
   );
 };
 
-export default DeleteButton;
+export default UpdateButton;

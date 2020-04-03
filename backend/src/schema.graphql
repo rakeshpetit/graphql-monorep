@@ -7,7 +7,15 @@ type Mutation {
   deleteItem(id: ID!): Item
 }
 
+type UserItem {
+  user: User,
+  item: [Item]
+}
+
 type Query {
   items: [Item]!
   item(where: ItemWhereUniqueInput!): Item
+  users: [User]!
+  user(where: UserWhereUniqueInput!): User
+  queryUser(id: ID!): UserItem
 }
