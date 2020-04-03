@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/rakesh-arunachalam-af0209/sick-fits/dev
-# timestamp: Fri Apr 03 2020 15:57:48 GMT+0530 (India Standard Time)
+# timestamp: Fri Apr 03 2020 16:24:55 GMT+0530 (India Standard Time)
 
 type AggregateItem {
   count: Int!
@@ -449,8 +449,8 @@ type User implements Node {
   name: String!
   email: String!
   password: String!
-  resetToken: String!
-  resetTokenExpiry: Float!
+  resetToken: String
+  resetTokenExpiry: Float
   permissions: [Permission!]!
 }
 
@@ -469,8 +469,8 @@ input UserCreateInput {
   name: String!
   email: String!
   password: String!
-  resetToken: String!
-  resetTokenExpiry: Float!
+  resetToken: String
+  resetTokenExpiry: Float
   permissions: UserCreatepermissionsInput
 }
 
@@ -507,8 +507,8 @@ type UserPreviousValues {
   name: String!
   email: String!
   password: String!
-  resetToken: String!
-  resetTokenExpiry: Float!
+  resetToken: String
+  resetTokenExpiry: Float
   permissions: [Permission!]!
 }
 
