@@ -6,10 +6,9 @@ const Nav = () => {
   return (
     <NavStyles>
       <User>
-      {({data: { me }}) => {
-        console.log(me)
-        if(me)
-        return <p>{me.name}</p>
+        {({ data: { me } }) => {
+          return me 
+          ? <p>{me.name}</p> : null
       }}
       </User>
       <Link href="/items">
