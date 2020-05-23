@@ -13,7 +13,6 @@ const Query = {
   },
   me(parent, args, ctx, info) {
     const userId = ctx.request.userId
-    console.log('me', userId)
     if(!userId){
       return null
     }
