@@ -10,6 +10,16 @@ const Query = {
     const user = await ctx.db.query.user({ where })
     const item = await ctx.db.query.items()
     return { user, item }
+  },
+  me(parent, args, ctx, info) {
+    const userId = ctx.request.userId
+    console.log('me', userId)
+    if(!userId){
+      return null
+    }
+    return ctx.db.query.user({ 
+      where: {id: userId}
+    }, info)
   }
 };
 
